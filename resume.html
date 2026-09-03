@@ -1,325 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+{"name": "edit_existing_file", "arguments": {"filepath": "index.html", "changes": "<!DOCTYPE html>
+<html lang=\"en\">
 <head>
-<meta charset="UTF-8">
-<title>Charles Vahlberg — Resume</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  :root{
-    --ink:#1c2530;
-    --ink-soft:#4a5566;
-    --rule:#c9cdd4;
-    --accent:#2f5d62;
-    --paper:#ffffff;
-  }
-
-  *{ box-sizing:border-box; }
-
-  body{
-    margin:0;
-    background:#e9eaec;
-    font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-  }
-
-  .page{
-    max-width:820px;
-    margin:40px auto;
-    background:var(--paper);
-    padding:56px 64px 64px;
-    box-shadow:0 1px 3px rgba(0,0,0,0.15);
-  }
-
-  header{
-    border-bottom:2px solid var(--ink);
-    padding-bottom:14px;
-    margin-bottom:22px;
-  }
-
-  h1{
-    margin:0 0 6px 0;
-    font-size:30px;
-    letter-spacing:0.3px;
-    font-weight:700;
-  }
-
-  .contact{
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size:13px;
-    color:var(--ink-soft);
-  }
-
-  .contact a{
-    color:var(--ink-soft);
-    text-decoration:none;
-  }
-
-  .contact a:hover{ text-decoration:underline; }
-
-  .contact .sep{
-    margin:0 8px;
-    color:var(--rule);
-  }
-
-  section{
-    margin-bottom:24px;
-  }
-
-  h2{
-    font-family:"Helvetica Neue", Arial, sans-serif;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:1.2px;
-    text-transform:uppercase;
-    color:var(--accent);
-    border-bottom:1px solid var(--rule);
-    padding-bottom:5px;
-    margin:0 0 12px 0;
-  }
-
-  .education-entry, .job{
-    margin-bottom:14px;
-  }
-
-  .education-entry:last-child, .job:last-child{
-    margin-bottom:0;
-  }
-
-  .edu-line{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    flex-wrap:wrap;
-    font-size:15px;
-  }
-
-  .school{
-    font-weight:700;
-  }
-
-  .edu-meta{
-    font-family:"Helvetica Neue", Arial, sans-serif;
-    font-size:12.5px;
-    color:var(--ink-soft);
-  }
-
-  .edu-detail{
-    font-size:13.5px;
-    color:var(--ink-soft);
-    margin-top:2px;
-  }
-
-  .job-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    flex-wrap:wrap;
-    margin-bottom:4px;
-  }
-
-  .job-title{
-    font-weight:700;
-    font-size:15px;
-  }
-
-  .job-org{
-    font-style:italic;
-    font-size:14px;
-    color:var(--ink-soft);
-  }
-
-  .job-dates{
-    font-family:"Helvetica Neue", Arial, sans-serif;
-    font-size:12.5px;
-    color:var(--ink-soft);
-    white-space:nowrap;
-  }
-
-  ul{
-    margin:6px 0 0 0;
-    padding-left:20px;
-  }
-
-  li{
-    font-size:13.8px;
-    line-height:1.5;
-    margin-bottom:4px;
-    color:var(--ink);
-  }
-
-  li:last-child{ margin-bottom:0; }
-
-  .skills-block{
-    margin-bottom:10px;
-  }
-
-  .skills-block:last-child{ margin-bottom:0; }
-
-  .skills-label{
-    font-weight:700;
-    font-size:13.8px;
-  }
-
-  .skills-sub{
-    font-size:13.8px;
-    margin:3px 0 0 18px;
-  }
-
-  @media print{
-    body{ background:var(--paper); }
-    .page{ box-shadow:none; margin:0; padding:36px 48px; }
-  }
-
-  @media (max-width:600px){
-    .page{ padding:32px 22px; }
-    .job-header, .edu-line{ flex-direction:column; }
-    .job-dates{ margin-top:2px; }
-  }
-</style>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Resume</title>
+    <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css\" rel=\"stylesheet\">
 </head>
 <body>
-<div class="page">
-
-  <header>
-    <h1>Charles Vahlberg</h1>
-    <div class="contact">
-      <a href="mailto:charlie.vahlberg@gmail.com">charlie.vahlberg@gmail.com</a>
-      <span class="sep">|</span>
-      <span>(667) 319-9217</span>
-    </div>
-  </header>
-
-  <section>
-    <h2>Education</h2>
-    <div class="education-entry">
-      <div class="edu-line">
-        <span class="school">Grove City College</span>
-        <span class="edu-meta">Expected Graduation: 2027 &nbsp;|&nbsp; GPA: 3.4</span>
-      </div>
-      <div class="edu-detail">Bachelor of Science, Design and Innovation &mdash; Marketing &amp; Computer Science Minor</div>
-    </div>
-    <div class="education-entry">
-      <div class="edu-line">
-        <span class="school">Belhaven University</span>
-        <span class="edu-meta">2020&ndash;2023 &nbsp;|&nbsp; GPA: 3.6</span>
-      </div>
-      <div class="edu-detail">Undeclared</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Technical Skills</h2>
-
-    <div class="skills-block">
-      <span class="skills-label">Programming Languages:</span>
-      <div class="skills-sub">Familiar with: Java, HTML, CSS, JavaScript, C, Python</div>
-      <div class="skills-sub">Programming Concepts: Data Structures and Algorithms</div>
-    </div>
-
-    <div class="skills-block">
-      <span class="skills-label">Development Tools:</span>
-      <div class="skills-sub">Familiar with: Git, Adobe Creative Cloud, DaVinci Resolve, Mathematica, Figma, WordPress</div>
-    </div>
-
-    <div class="skills-block">
-      <span class="skills-label">Certifications:</span> CPR/First Aid, Pool Operator, Lifeguard, Google Analytics
-    </div>
-
-    <div class="skills-block">
-      <span class="skills-label">Instagram Social Media Management:</span> Metricool, Follower Growth, Engagement Metrics
-    </div>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Developed a Java web scraper application, functioning like a search engine spider, to extract code from websites via URL input and recursively pull code from embedded links.</li>
-      <li>Designed search engine-optimized copy materials for a mock website campaign, increasing online visibility and engagement.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Work Experience</h2>
-
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Growth Marketing &amp; Brand Experience Intern</span>
-        <span class="job-dates">February 2026 &ndash; April 2026</span>
-      </div>
-      <div class="job-org">Built to Exit</div>
-      <ul>
-        <li>Built and launched a high-converting &ldquo;Dare to Exit&rdquo; event sales funnel website from the ground up, driving event registrations and lead capture.</li>
-        <li>Executed social media and brand campaigns that increased Meta platform followership by 10% in 8 weeks.</li>
-        <li>Collaborated cross-functionally to develop and deploy integrated marketing initiatives, strengthening brand positioning and audience engagement.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Social Media Coordinator</span>
-        <span class="job-dates">September 2023 &ndash; 2025</span>
-      </div>
-      <div class="job-org">Grove City Rugby</div>
-      <ul>
-        <li>Spearheaded social media strategy by building interest about club rugby and achieved a 45% increase in engagement across social media and in-person attendance.</li>
-        <li>Marketed club awareness through video/graphic content and brand guidelines that grew follower base by 321 in 4 months, enhancing brand visibility of an overlooked club sport.</li>
-        <li>Designed and executed 135 unique posts, resulting in 80% audience interaction growth over 4 months on Instagram.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Social Media Content Creator</span>
-        <span class="job-dates">January 2025 &ndash; 2026</span>
-      </div>
-      <div class="job-org">Grove City Lacrosse</div>
-      <ul>
-        <li>Leveraged platforms such as Instagram and video editing tools to deliver engaging, high-performance sports content, resulting in a 90% increase in profile reach.</li>
-        <li>Created content strategy through analytics and platform trends to maximize audience engagement and visibility.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Youth Ministry Internship</span>
-        <span class="job-dates">May 2024 &ndash; August 2025</span>
-      </div>
-      <div class="job-org">Severna Park Evangelical Presbyterian Church</div>
-      <ul>
-        <li>Cultivated relationships with local high school and middle school students through regularly scheduled and ad hoc events, contributing to a 5% increase in attendance over 12 weeks.</li>
-        <li>Facilitated resolution of student-to-student conflicts by fostering open dialogue and promoting empathy.</li>
-        <li>Revived and marketed the &ldquo;Guys Hangout&rdquo; program after a 3-year hiatus, leveraging word-of-mouth strategies to attract 23 attendees at the inaugural event.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Video Design and Editor</span>
-        <span class="job-dates">2021 &ndash; 2022</span>
-      </div>
-      <div class="job-org">JPGreeze</div>
-      <ul>
-        <li>Developed video onboarding and training content using Adobe Suite and DaVinci Resolve 17, offering a 25% faster onboarding system for clients.</li>
-        <li>Processed requests in time-sensitive environments; received input and updated projects iteratively within 24&ndash;36 hours and completed the main onboarding project within 10 weeks.</li>
-        <li>Translated technical concepts into creative solutions; wrote clear specifications, gathered team feedback, and adapted corporate and technical standards to captivate a 15&ndash;18-year-old audience.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Grounds Keeper Intern</span>
-        <span class="job-dates">2022 &ndash; 2023</span>
-      </div>
-      <div class="job-org">Severna Park Evangelical Presbyterian Church</div>
-      <ul>
-        <li>Executed major church overhauls and renovations within tight deadlines, building new community and much-needed storage spaces for multiple church ministries.</li>
-        <li>Supported renovation projects, contributing to a more welcoming and functional environment.</li>
-      </ul>
-    </div>
-
-  </section>
-
-</div>
+    <header class=\"bg-primary text-white py-3\">
+        <div class=\"container\">
+            <h1 class=\"mb-0\">John Doe</h1>
+            <p class=\"mb-0\">Email: john.doe@example.com | Phone: (123) 456-7890</p>
+        </div>
+    </header>
+    <aside class=\"col-md-3 bg-light py-3\">
+        <h2 class=\"mb-3\">Skills</h2>
+        <ul class=\"list-unstyled\">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Bootstrap 5</li>
+            <li>React</li>
+        </ul>
+    </aside>
+    <main class=\"col-md-9\">
+        <section class=\"mb-5\">
+            <h2 class=\"mb-3\">Experience</h2>
+            <div class=\"card\">
+                <div class=\"card-body\">
+                    <h3 class=\"card-title\">Software Developer</h3>
+                    <p class=\"card-text\">Company Name, City, State | Date</p>
+                    <ul class=\"list-unstyled\">
+                        <li>Developed and maintained web applications using HTML5, CSS3, and JavaScript.</li>
+                        <li>Integrated Bootstrap 5 for responsive design and improved user experience.</li>
+                        <li>Collaborated with cross-functional teams to deliver high-quality projects on time.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class=\"mb-5\">
+            <h2 class=\"mb-3\">Education</h2>
+            <div class=\"card\">
+                <div class=\"card-body\">
+                    <h3 class=\"card-title\">Bachelor of Science in Computer Science</h3>
+                    <p class=\"card-text\">University Name, City, State | Graduation Year</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js\"></script>
 </body>
-</html>
+</html>"}}
